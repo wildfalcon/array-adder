@@ -18,6 +18,8 @@ class ArrayPairSummer
     current_total == total
   end
 
+  private
+
   def next_element_pair!(total)
     next_lowest_total! if current_total > total
     next_highest_total! if current_total < total
