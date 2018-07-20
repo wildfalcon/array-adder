@@ -5,21 +5,17 @@ class Array
 
     pointers = [0, length - 1]
 
-    if current_total(pointers) > total
-      search_decreasing(pointers, total)
-    else
-      search_increasing(pointers, total)
+    while more_moves_available?(pointers)
+      break if current_total(pointers) == total
+      next_lowest_total(pointers) if current_total(pointers) > total
+      next_highest_total(pointers) if current_total(pointers) < total
     end
 
     current_total(pointers) == total
   end
 
-  def search_decreasing(pointers, total)
-    next_lowest_total pointers while current_total(pointers) < total
-  end
-
-  def search_increasing(pointers, total)
-    next_highest_total pointers while current_total(pointers) > total
+  def more_moves_available?(pointers)
+    (pointers.last - pointers.first) > 1
   end
 
   def current_total(pointers)
