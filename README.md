@@ -15,3 +15,14 @@ From the command line, clone this repository
 Then install gems
 
 ```bundle install```
+
+Usage
+=====
+
+In an irb console:
+
+````
+require './lib/array.rb'
+
+[1, 3, 5, 7].pair_that_sums_to?(8)
+````
