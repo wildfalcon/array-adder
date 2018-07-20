@@ -15,22 +15,22 @@ class Array
   end
 
   def search_decreasing(pointers, total)
-    reduce_test_total pointers while current_total(pointers) < total
+    next_lowest_total pointers while current_total(pointers) < total
   end
 
   def search_increasing(pointers, total)
-    increse_test_total pointers while current_total(pointers) > total
+    next_highest_total pointers while current_total(pointers) > total
   end
 
   def current_total(pointers)
     self[pointers.first] + self[pointers.last]
   end
 
-  def reduce_test_total(pointers)
+  def next_lowest_total(pointers)
     pointers[1] = pointers[1] - 1
   end
 
-  def increase_test_total(pointers)
+  def next_highest_total(pointers)
     pointers[0] = pointers[0] + 1
   end
 end
