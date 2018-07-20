@@ -7,11 +7,15 @@ class Array
 
     while more_moves_available?(pointers)
       break if current_total(pointers) == total
-      next_lowest_total(pointers) if current_total(pointers) > total
-      next_highest_total(pointers) if current_total(pointers) < total
+      next_element_pair(pointers, total)
     end
 
     current_total(pointers) == total
+  end
+
+  def next_element_pair(pointers, total)
+    next_lowest_total(pointers) if current_total(pointers) > total
+    next_highest_total(pointers) if current_total(pointers) < total
   end
 
   def more_moves_available?(pointers)
