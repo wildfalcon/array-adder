@@ -8,7 +8,7 @@ class ArrayPairSummer
   end
 
   def pair_that_sums_to?(total)
-    raise StandarError if @array.sort != @array
+    raise StandardError if @array.sort != @array
 
     while more_moves_available?
       break if current_total == total
