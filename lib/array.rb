@@ -1,6 +1,7 @@
 # Reopening Array in order to create a demostration of how to do so
 class Array
   def pair_that_sums_to?(total)
+    raise StandarError if sort != self
     pointers = [0, length - 1]
 
     if current_total(pointers) > total
