@@ -14,9 +14,8 @@ describe 'Array' do
       expect([1, 3, 4, 7].pair_that_sums_to?(7)).to eq true
     end
 
-    it 'raises error when array is unsorted' do
-      expect { [6, 1, 3, 4].pair_that_sums_to?(7) }
-        .to raise_error(StandardError)
+    it 'return true even when array is unsorted' do
+      expect([6, 1, 3, 4].pair_that_sums_to?(4)).to eq true
     end
   end
 end
