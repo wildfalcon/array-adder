@@ -2,15 +2,24 @@
 class Array
   def pair_that_sums_to?(total)
     raise StandarError if sort != self
+
     pointers = [0, length - 1]
 
     if current_total(pointers) > total
-      reduce_test_total pointers while current_total(pointers) < total
+      search_decreasing(pointers, total)
     else
-      increse_test_total pointers while current_total(pointers) > total
+      search_increasing(pointers, total)
     end
 
     current_total(pointers) == total
+  end
+
+  def search_decreasing(pointers, total)
+    reduce_test_total pointers while current_total(pointers) < total
+  end
+
+  def search_increasing(pointers, total)
+    increse_test_total pointers while current_total(pointers) > total
   end
 
   def current_total(pointers)
