@@ -6,8 +6,12 @@ describe 'Array' do
       expect([1, 2, 3, 4].pair_that_sums_to?(8)).to eq false
     end
 
-    it 'returns true when a pair adds to total' do
+    it 'returns true when first and last elements add to total' do
       expect([1, 2, 4, 4].pair_that_sums_to?(5)).to eq true
+    end
+
+    it 'returns true when middle pair add to total' do
+      expect([1, 3, 4, 6].pair_that_sums_to?(7)).to eq true
     end
   end
 end
