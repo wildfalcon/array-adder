@@ -22,7 +22,7 @@ Usage
 In an irb console:
 
 ````
-require './lib/array.rb'
+require './lib/array_adder.rb'
 
 [1, 3, 5, 7].pair_that_sums_to?(8)
 ````
